@@ -1,0 +1,317 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover, a:active, a:visited, a:target {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+ul, li {
+    list-style: none;
+}
+
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+
+    /*--以下的样式属性是属于可继承的属性,我们尽量不要把其放在*中,而是放在BODY中,防止CSS优先级的限制导致下面修改这些样式不生效--*/
+    font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+.box {
+    margin: 20px auto;
+    width: 800px;
+}
+
+/*--calendar start--*/
+.calendar {
+    position: relative;
+    height: 80px;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+}
+
+.calendar .calendarBtn {
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    line-height: 80px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.calendar .calendarBtn:hover {
+    background: #f4f4f4;
+}
+
+.calendar .calendarBtn.left {
+    left: 0;
+}
+
+.calendar .calendarBtn.right {
+    right: 0;
+}
+
+/*--使用CSS画三角型--*/
+.triangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+}
+
+.leftFir {
+    margin-left: -12px;
+    border-right-color: #1C90F2;
+}
+
+.leftTwo {
+    margin-left: -10px;
+    border-right-color: #fff;
+}
+
+.rightFir {
+    margin-left: -4px;
+    border-left-color: #1C90F2;
+}
+
+.rightTwo {
+    margin-left: -6px;
+    border-left-color: #fff;
+}
+
+.calendar .calendarBtn:hover .leftTwo {
+    border-right-color: #f4f4f4;
+}
+
+.calendar .calendarBtn:hover .rightTwo {
+    border-left-color: #f4f4f4;
+}
+
+.calendarList {
+    position: relative;
+    margin: 0 31px;
+    padding: 5px 0;
+    height: 70px;
+    overflow: hidden;
+}
+
+.calendarList ul {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+}
+
+.calendarList ul li {
+    float: left;
+    margin: 0 12px;
+    width: 81px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.calendarList ul li span {
+    display: block;
+    text-align: center;
+}
+
+.calendarList ul li .week {
+    margin-top: 10px;
+    height: 19px;
+    line-height: 19px;
+    font-size: 14px;
+    color: #b9b9b9;
+}
+
+.calendarList ul li .date {
+    margin-top: 5px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+}
+
+.calendarList ul li:hover {
+    background: #e4f0fa;
+}
+
+.calendarList ul li:hover span {
+    color: #1C90F2;
+}
+
+.calendarList ul li.bg {
+    background: #1C90F2;
+}
+
+.calendarList ul li.bg span {
+    color: #fff;
+}
+
+/*--calendar end--*/
+
+/*--match start--*/
+.match {
+    position: relative;
+    overflow: hidden;
+}
+
+.matchDate .date {
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.matchDate .matchList {
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-bottom: none;
+}
+
+.matchDate .matchList li {
+    position: relative;
+    height: 80px;
+    border-bottom: 1px solid #dcdcdc;
+    cursor: pointer;
+}
+
+.matchDate .matchList li:hover {
+    background: #fafafa;
+}
+
+.matchList li .left {
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+
+.matchList li .left span {
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 80px;
+    font-size: 14px;
+}
+
+.matchList li .left span.time {
+    padding-left: 18px;
+    width: 80px;
+    color: #515151;
+}
+
+.matchList li .left span.type {
+    width: 102px;
+    color: #a0a0a0;
+}
+
+.matchList li .right {
+    float: right;
+    padding-right: 18px;
+    width: 75px;
+    height: 100%;
+}
+
+.matchList li .right a {
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    color: #1C90F2;
+    font-size: 13px;
+}
+
+.matchList li .right a.video {
+    margin-top: 15px;
+    background: url("http://mat1.gtimg.com/sports/kbsweb/statics/video_post_game_3128c9.png") no-repeat center left;
+}
+
+.matchList li .right a.playBack {
+    margin-top: 10px;
+    background: url("http://mat1.gtimg.com/sports/kbsweb/statics/video_post_playback_4b7dc5.png") no-repeat center left;
+}
+
+.matchList li .right a:hover {
+    text-decoration: underline;
+}
+
+.matchList li .middle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -185px;
+    width: 370px;
+    height: 100%;
+}
+
+.matchList li .middle a {
+    width: 145px;
+    height: 100%;
+}
+
+.matchList li .middle a:hover {
+    color: #1C90F2;
+}
+
+.matchList li .middle a img {
+    display: block;
+    margin-top: 17px;
+    width: 48px;
+    height: 45px;
+}
+
+.matchList li .middle a.home img {
+    float: left;
+}
+
+.matchList li .middle a.away img {
+    float: right;
+}
+
+.matchList li .middle a span {
+    display: block;
+    line-height: 80px;
+    font-size: 16px;
+}
+
+.matchList li .middle a.home span {
+    float: left;
+    margin-left: 5px;
+}
+
+.matchList li .middle a.away span {
+    float: right;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.matchList li .middle a.home {
+    float: left;
+}
+
+.matchList li .middle a.away {
+    float: right;
+}
+
+.matchList li .middle .score {
+    float: left;
+    width: 80px;
+    height: 100%;
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+    color: #1C90F2;
+}
+
+/*--match end--*/

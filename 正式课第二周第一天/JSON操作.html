@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    *   JSON它是一个特殊的数据格式，是可以跨平台传输的数据
+    * */
+    var obj = {name: 'zf'};
+    var jsonObj = {"name" : "tx"};
+
+    /*
+    *   JSON常用方法
+    *       JSON.stringify() 把json格式的对象转化为字符串的
+    *       JSON.parse(); 把json格式的字符串转化为json格式的对象,低版本ie不兼容
+    *
+    *
+    * */
+    var str = JSON.stringify(jsonObj); //json格式的字符串
+    console.log(JSON.parse(str)); //
+
+
+</script>
